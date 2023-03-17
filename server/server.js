@@ -93,6 +93,7 @@ app.post("/verifierreg", async (req, res) => {
     const { name, email, password } = req.body;
     //console.log("register call");
 
+    const encryptPassword = await bcrypt.hash(password, 10);
     try {
         const oldUser = await verifierregmodel.findOne({ email });
         console.log(oldUser);
@@ -104,7 +105,7 @@ app.post("/verifierreg", async (req, res) => {
             await verifierregmodel.create({
                 name,
                 email,
-                password,
+                password: encryptPassword,
                 role: "verifier"
             });
             res.json({ message: "ok" });
@@ -127,13 +128,18 @@ app.post("/verifierlogin", async (req, res) => {
         //console.log(oldUser.length);
         if (user2) {
             //console.log(encryptPassword);
-            // bcrypt.compare(password, user.password, function (err, isMatch) {
-                
-            if(user2.password==password){
-                res.status(200).json({ message: 'ok' });
-            }else {
+            bcrypt.compare(password, user2.password, function (err, isMatch) {
+                if (err) {
+                    throw err
+                } else if (!isMatch) {
+                    //console.log("doesn'tmatch!")
                     res.json({ message: "don'tmatch" });
-            }
+                } else {
+                    //console.log("ok")
+                    res.status(200).json({ message: 'ok' });
+                }
+            })
+            
             // if (oldUser.password === encryptPassword) {
             //     res.status(200).json({ message: 'ok' });
             // }
@@ -161,7 +167,7 @@ app.post("/verifierlogin", async (req, res) => {
 app.post("/adminreg", async (req, res) => {
     const { name, email, password } = req.body;
     //console.log("register call");
-
+    const encryptPassword = await bcrypt.hash(password, 10);
     try {
         const oldUser = await adminregmodel.findOne({ email });
         console.log(oldUser);
@@ -173,7 +179,7 @@ app.post("/adminreg", async (req, res) => {
             await adminregmodel.create({
                 name,
                 email,
-                password,
+                password: encryptPassword,
                 role: "admin"
             });
             res.json({ message: "ok" });
@@ -187,7 +193,7 @@ app.post("/adminreg", async (req, res) => {
 
 app.post("/adminlogin", async (req, res) => {
     const { email, password } = req.body;
-    //const encryptPassword = await bcrypt.hash(password, 10);
+    // const encryptPassword = await bcrypt.hash(password, 10);
     // console.log(req.body.email);
     // console.log(req.body.password);
     try {
@@ -197,13 +203,17 @@ app.post("/adminlogin", async (req, res) => {
         //console.log(oldUser.length);
         if (user1) {
             //console.log(encryptPassword);
-            // bcrypt.compare(password, user.password, function (err, isMatch) {
-                
-            if(user1.password==password){
-                res.status(200).json({ message: 'ok' });
-            }else {
+            bcrypt.compare(password, user1.password, function (err, isMatch) {
+                if (err) {
+                    throw err
+                } else if (!isMatch) {
+                    //console.log("doesn'tmatch!")
                     res.json({ message: "don'tmatch" });
-            }
+                } else {
+                    //console.log("ok")
+                    res.status(200).json({ message: 'ok' });
+                }
+            })
             // if (oldUser.password === encryptPassword) {
             //     res.status(200).json({ message: 'ok' });
             // }

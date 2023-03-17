@@ -24,6 +24,10 @@ const Patientlogin = () => {
     navigate('/index', { replace: true });
   }
   const submit = async e => {
+    if(patientdetails.email=="" || patientdetails.password==""){
+      toast.error("Fill info first");
+    }
+    else{
     console.log("submit call");
     e.preventDefault();
 
@@ -48,7 +52,7 @@ const Patientlogin = () => {
 
 
     });
-
+  }
   }
   return (
     <div>

@@ -24,6 +24,10 @@ const Doclogin = () => {
     navigate('/docindex', { replace: true });
   }
   const submit = async e => {
+    if(docdetails.email=="" || docdetails.password==""){
+      toast.error("Fill info first");
+    }
+    else{
     console.log("submit call");
     e.preventDefault();
     
@@ -48,7 +52,7 @@ const Doclogin = () => {
 
 
     });
-
+  }
   }
   return (
     <div>

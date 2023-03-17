@@ -24,6 +24,10 @@ const Adminlogin = () => {
     navigate('/admindash', { replace: true });
   }
   const submit = async e => {
+    if(admindetails.email=="" || admindetails.password==""){
+      toast.error("Fill info first");
+    }
+    else{
     console.log("submit call");
     e.preventDefault();
 
@@ -48,7 +52,7 @@ const Adminlogin = () => {
 
 
     });
-
+  }
   }
   return (
     <div>

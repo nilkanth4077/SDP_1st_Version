@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useState, useEffect } from "react";
 import axios, { isCancel, AxiosError } from 'axios';
 import { Link, useNavigate } from "react-router-dom";
+
 function Patientreg() {
     const [patientdetails, setdetails] = useState({
         fullname: "", phonenumber: "", email: "", password: "", confirmpassword: "",
@@ -16,7 +17,16 @@ function Patientreg() {
     const handleInput = (e) => {
         setdetails({ ...patientdetails, [e.target.name]: e.target.value });
     }
+    const navigate = useNavigate();
+  function navigator() {
+
+    navigate('/patientlogin', { replace: true });
+  }
     const submit = async e => {
+        if(patientdetails.fullname=="" || patientdetails.phonenumber=="" || patientdetails.email=="" || patientdetails.password=="" || patientdetails.confirmpassword==""){
+            toast.error("Fill info first");
+        }
+        else{
         console.log("submit call");
         e.preventDefault();
         if (patientdetails.password === patientdetails.confirmpassword) {
@@ -24,6 +34,7 @@ function Patientreg() {
                 //console.log(res);
                 if (res.data.message === "ok") {
                     toast.success("registration Successful");
+                    navigator();
                     var i = 0;
                     var count = 0;
                     for (i = 0; i < 100000; i++) {
@@ -48,7 +59,7 @@ function Patientreg() {
             toast.error("Password doesn't match with Confirpassword");
         }
 
-
+        }
     }
 
 

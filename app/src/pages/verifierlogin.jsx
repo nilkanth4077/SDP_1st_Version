@@ -24,6 +24,10 @@ const Verlogin = () => {
     navigate('/dashmain', { replace: true });
   }
   const submit = async e => {
+    if(verifierdetails.email=="" || verifierdetails.password==""){
+      toast.error("Fill info first");
+    }
+    else{
     console.log("submit call");
     e.preventDefault();
 
@@ -48,7 +52,7 @@ const Verlogin = () => {
 
 
     });
-
+  }
   }
   return (
     <div>

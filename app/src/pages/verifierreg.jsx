@@ -23,6 +23,10 @@ function Verifierreg() {
     navigate('/verifierlogin', { replace: true });
   }
     const submit = async e => {
+        if(verifierdetails.name=="" || verifierdetails.email=="" || verifierdetails.password==""){
+            toast.error("Fill info first");
+        }
+        else{
         console.log("submit call");
         e.preventDefault();
             await axios.post("http://localhost:8080/verifierreg", verifierdetails).then((res) => {
@@ -36,7 +40,7 @@ function Verifierreg() {
                         count = count + 1;
                     }
                     if (count > 1000) {
-                        toast.info("Now You can login with your email and pass");
+                        toast.info("Verifier adde successfully");
                     }
 
                 }
@@ -49,6 +53,7 @@ function Verifierreg() {
 
 
             });
+        }
     }
 
 

@@ -29,6 +29,10 @@ const Doctorreg = () => {
 
   }
   const submit = async e => {
+    if(patientdetails.fullname=="" || patientdetails.email=="" || patientdetails.phonenumber=="" || patientdetails.password==""){
+      toast.error("Fill info first");
+    }
+    else{
     console.log("submit call");
     console.log(file);
     e.preventDefault();
@@ -80,7 +84,7 @@ const Doctorreg = () => {
     })
 
 
-
+    }
 
   }
 

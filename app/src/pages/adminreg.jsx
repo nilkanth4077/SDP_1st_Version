@@ -23,6 +23,10 @@ function Adminreg() {
     navigate('/adminlogin', { replace: true });
   }
     const submit = async e => {
+        if(admindetails.name=="" || admindetails.email=="" || admindetails.password==""){
+            toast.error("Fill info first");
+        }
+        else{
         console.log("submit call");
         e.preventDefault();
             await axios.post("http://localhost:8080/adminreg", admindetails).then((res) => {
@@ -36,7 +40,7 @@ function Adminreg() {
                         count = count + 1;
                     }
                     if (count > 1000) {
-                        toast.info("Now admin can login with this email and password");
+                        toast.info("Admin added successfully");
                     }
 
                 }
@@ -50,6 +54,7 @@ function Adminreg() {
 
             });
     }
+}
 
 
 
