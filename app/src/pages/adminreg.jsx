@@ -36,7 +36,7 @@ function Adminreg() {
                         count = count + 1;
                     }
                     if (count > 1000) {
-                        toast.info("Now You can login with your email and pass");
+                        toast.info("Now admin can login with this email and password");
                     }
 
                 }
@@ -65,7 +65,7 @@ function Adminreg() {
                             <div class=" px-xl-5">
                                 <div class="lead_magnet_form_wrapper">
                                     <div class="form_title">
-                                        <h4 class="sub_heading">Admin Registration :</h4>
+                                        <h4 class="sub_heading">Register New Admin :</h4>
                                         <h3 class="heading mb-2 pb-1">Fill details</h3>
                                     </div>
                                     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css" />
@@ -111,7 +111,7 @@ function Adminreg() {
 
                                             </div>
                                         </form><br />
-                                        <Link style={{ textDecoration: "none" }} to="/adminlogin">Already an Admin ?</Link>
+                                        <Link style={{ textDecoration: "none" }} to="/adminlogin">Already an Admin ? Check here !!</Link>
                                     </div>
 
 

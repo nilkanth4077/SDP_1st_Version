@@ -26,7 +26,7 @@ const Doclogin = () => {
   const submit = async e => {
     console.log("submit call");
     e.preventDefault();
-
+    
     await axios.post("http://localhost:8080/doclogin", docdetails).then((res) => {
       //console.log(res);
       if (res.data.message === "ok") {
@@ -136,7 +136,7 @@ const Doclogin = () => {
 
                       </div>
                     </form><br />
-                    <Link style={{ textDecoration: "none" }} to="/docreg">Create an account?</Link>
+                    <Link style={{ textDecoration: "none" }} to="/docreg">New Doctor ? <br/>Register Here !!</Link>
                   </div>
 
 

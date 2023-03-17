@@ -15,10 +15,24 @@ function Admindash() {
     
     return (
         <div>
-            <section>
-            <Link style={{ textDecoration: "none" }} to="/adminreg">Add Admin</Link><br/><br/>
-            <Link style={{ textDecoration: "none" }} to="/verifierreg">Add Verifier</Link>
-            </section >
+            <div class="row container mt-3 justify-content-center">
+            <div class="card shadow-none pt-3 pb-1 mb-4 mx-4 bg-dark rounded" style={{width: "18rem"}}>
+            <img class="card-img-top" src="assets/img/admin.jpg" alt="Admin image cap"/>
+            <div class="card-body">
+                <h5 class="card-title" style={{color: "whitesmoke"}}>Admin</h5>
+                <p class="card-text" style={{color: "white"}}>Admin have authorities to add an admin and a verifier. So if you are willing to add someone as 'New Admin', you can add here.</p>
+                <a href="/adminreg" class="btn btn-primary">Add Admin</a>
+            </div>
+            </div>
+            <div class="card shadow-none pt-4 pb-1 mb-4 mx-4 bg-dark rounded" style={{width: "18rem"}}>
+            <img class="card-img-top" src="assets/img/var.jpg" alt="Admin image cap"/>
+            <div class="card-body">
+                <h5 class="card-title" style={{color: "white"}}>Verifier</h5>
+                <p class="card-text" style={{color: "white"}}>Verifier can authaunticate 'New Doctor' only. So if you want to add someone as 'New Verifier', you can add here.</p>
+                <a href="/verifierreg" class="btn btn-primary">Add Verifier</a>
+            </div>
+            </div>
+            </div>
             <Footer />
         </div >
  )

@@ -17,6 +17,11 @@ const Doctorreg = () => {
   const handleInput = (e) => {
     setdetails({ ...patientdetails, [e.target.name]: e.target.value });
   }
+  const navigate = useNavigate();
+  function navigator() {
+
+    navigate('/doclogin', { replace: true });
+  }
   const [file, setfile] = useState();
   const handleFile = (e) => {
     setfile(e.target.files[0]);
@@ -27,6 +32,7 @@ const Doctorreg = () => {
     console.log("submit call");
     console.log(file);
     e.preventDefault();
+    navigator();
     const formdata = new FormData();
     formdata.append("docfile", file);
     filedoc.name = file.name;

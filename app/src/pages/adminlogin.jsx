@@ -77,7 +77,7 @@ const Adminlogin = () => {
                         </div>
                         <div class="mc-field-group form-group">
                           <label for="mce-MMERGE1" class="mb-1 mt-3">Password *</label>
-                          <input type="text" name="password" value={password} onChange={(e) => handleInput(e)} class="form-control" id="mce-MMERGE1" required="true" />
+                          <input type="password" name="password" value={password} onChange={(e) => handleInput(e)} class="form-control" id="mce-MMERGE1" required="true" />
                         </div>{/*
                         <div class="mc-field-group form-group">
                           <label for="mce-MMERGE1" class="mb-1 mt-3">Admin Key *</label>

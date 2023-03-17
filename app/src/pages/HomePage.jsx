@@ -19,7 +19,7 @@ const HomePage = () => {
                     </div>
                     <div class="col-lg-6">
                         <div class="download_app_btn download_app_btn_right doc_btn_brd">
-                            <a href="/docreg" target="_self" style={{ textDecoration: "none" }}>I'm Doctor</a>
+                            <a href="/doclogin" target="_self" style={{ textDecoration: "none" }}>I'm Doctor</a>
                         </div>
                     </div>
                 </div>
