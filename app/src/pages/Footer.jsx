@@ -48,8 +48,8 @@ function Footer() {
                                     <div class="">
                                         <div class="p-0"><i class="fas fa-map-marker-alt me-1"></i> <b>Address:</b>
                                         </div>
-                                        <div class=""> <a href="https://goo.gl/maps/FUHLVp4GBdF4RCKr5" style={{ textDecoration: "none", color: "white" }}> WeWork Futura, Sr No 133(P),
-                                            CTS No 4944, Magarpatta Rd, Kirtane Baugh, Hadpsar, Pune 411028 </a></div>
+                                        <div class=""> <a href="/" style={{ textDecoration: "none", color: "white" }}> Nr. Vaniyavad Circle, Sr No 133(P),
+                                            CTS No 4944, College Rd, Nadiad, Kheda 387001 </a></div>
                                     </div>
                                 </li>
                                 <li>
